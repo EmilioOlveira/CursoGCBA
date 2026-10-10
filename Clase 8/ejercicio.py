@@ -14,7 +14,7 @@ def agregar_producto():
     try:
         precio = int(input("Ingrese el precio del producto: "))
     except ValueError:
-        print("Por favor, ingrese un número válido para el precios.")
+        print("Por favor, ingrese un número válido para el prec ios.")
         return
        
     productos[nombre] = precio
