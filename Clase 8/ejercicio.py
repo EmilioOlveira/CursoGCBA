@@ -8,9 +8,7 @@ def agregar_producto():
     if nombre in productos: 
         respuesta=("El producto ya existe. Desea modificar el precio?.")
         
-        if respuesta.lower()=="s":
-            continue
-        else:
+        if respuesta.lower()!="s":
             return
 
     try:
