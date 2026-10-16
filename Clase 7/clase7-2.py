@@ -8,10 +8,11 @@ while True:
         print("No se puede ingresar un nombre vacío. Intente nuevamente.")
         continue    
 
-    mi_lista.append(respuesta)
-
     if respuesta.lower() == "fin":
         break
+
+    mi_lista.append(respuesta)
+
 
 mi_lista.sort()
 
