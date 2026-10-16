@@ -14,7 +14,7 @@ print(f"Promedio primeros tres días: {str(calcula_promedio(primeros_dias))}")
 print(primeros_dias)
 
 print(f"Promedio medios días: {str(calcula_promedio(medios_dias))}")
-
+print(f"Suma medios dias: "+ str(sum(medios_dias)))
 print(medios_dias)
 
 print(f"Promedio últimos dos días: {str(calcula_promedio(ultimos_dias))}")
