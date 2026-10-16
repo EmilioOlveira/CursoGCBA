@@ -1,7 +1,7 @@
 mi_lista = []
 respuesta = ""
 
-while respuesta.lower() != "fin":
+while True:
 
     respuesta = input("Ingrese un nombre o fin para terminar: ")
     if respuesta.strip() == "":
@@ -10,7 +10,7 @@ while respuesta.lower() != "fin":
 
     mi_lista.append(respuesta)
 
-    if respuesta.lower() != "fin":
+    if respuesta.lower() == "fin":
         break
 
 mi_lista.sort()
