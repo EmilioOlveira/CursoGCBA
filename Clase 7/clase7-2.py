@@ -1,4 +1,5 @@
 mi_lista = []
+respuesta = ""
 
 while respuesta.lower() != "fin":
 
