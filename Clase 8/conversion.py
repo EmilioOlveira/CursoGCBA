@@ -8,8 +8,8 @@ def Fecha_a_texto(dia,mes,anio):
         "Veinticuatro","Veinticinco","Veintiseis","Veintisiete","Veintiocho","Veintinueve",
         "Treinta","Treinta y uno")
 
-    if dia.isnumeric()==False or mes.isnumeric()==False or anio.isnumeric()==False:
-        return "Fecha inválida"
+    #if dia.isnumeric()==False or mes.isnumeric()==False or anio.isnumeric()==False:
+    #    return "Fecha inválida"
     
     if dia <1 or dia >31 or (mes==2 and dia>29) or (mes in [4,6,9,11] and dia>30):
         return "Fecha inválida"
