@@ -8,14 +8,14 @@ def Fecha_a_texto(dia,mes,anio):
         "Veinticuatro","Veinticinco","Veintiseis","Veintisiete","Veintiocho","Veintinueve",
         "Treinta","Treinta y uno")
 
-    if dia.isnumer()==False or mes.isnumer()==False or anio.isnumer()==False:
+    if dia.isnumber()==False or mes.isnumber()==False or anio.isnumber()==False:
         return "Fecha inválida"
     
     if dia <1 or dia >31 or (mes==2 and dia>29) or (mes in [4,6,9,11] and dia>30):
         return "Fecha inválida"
-    elif mes<1 or mes>12
+    elif mes<1 or mes>12:
         return "Fecha inválida"
-    elif anio<0
+    elif anio<0:
         return "Fecha Inválida"
 
     Fecha = dias[dia-1] + " de " + Meses[mes-1] + " de " + str(anio)
@@ -28,6 +28,9 @@ fecha_ingresada=input("Ingrese Fecha en formato dd/mm/aaaa:")
 dia=int(fecha_ingresada[0:2])
 mes=int(fecha_ingresada[3:5])
 anio=int(fecha_ingresada[6:10])
+anio_short=int(fecha_ingresada[8:10])
+print(f"Dia:{dia} Mes:{mes} Año:{anio} Año corto:{anio_short}")
+
 
 fecha_str= Fecha_a_texto(dia,mes,anio)
 
