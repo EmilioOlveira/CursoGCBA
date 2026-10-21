@@ -21,7 +21,7 @@ def agregar_producto():
                 print("Precio de producto debe ser un número")
                 continue
 
-        productos.append(nombre, precio_num)
+        productos.append([nombre, precio_num])
 
         print(f"Producto agregado: {nombre} - {precio_num}")
 
