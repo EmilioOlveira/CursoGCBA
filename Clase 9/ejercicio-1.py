@@ -48,7 +48,7 @@ def consultar_productos():
     print(f"-"*50)
     print(f"    Nombre\t\t\tPrecio")
     for producto in productos:
-        print(f"{producto[0]:<30}\t\t\t{producto[1]:>12.2f}")
+        print(f"{producto[0]:<20}\t\t\t{producto[1]:>12.2f}")
     input("Presione Enter para continuar...")
 
     return
