@@ -5,8 +5,8 @@ productos = []
 def agregar_producto():
     """ Realiza el alta de productos """
     while True:
-        Nombre = input("Ingrese nombre de producto:/t")
-        Precio = input("Ingrese precio de producto:/t")
+        Nombre = input("Ingrese nombre de producto:\t")
+        Precio = input("Ingrese precio de producto:\t")
 
         if nombre == "":
             print("Nombre de producto no puede estar vacío")
