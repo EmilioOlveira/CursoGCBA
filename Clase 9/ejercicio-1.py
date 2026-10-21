@@ -24,12 +24,26 @@ def mostrar_menu():
 
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
-        cls
         print(f"Bienvenido al sistema de gestión de productos")
         print(f"Agregar producto)")
         print(f"Consultar producto")
         print(f"Eliminar producto")
         print(f"Salir")
-    return
 
+        opcion = input("Seleccione una opción: (letra mayuscula)")
+
+        match opcion.lower(): 
+            case "s":
+                print("Saliendo del sistema...")
+                break
+            case "a":
+                agregar_producto()
+            case "c":
+                consultar_productos()
+            case "e":
+                eliminar_producto()
+
+    return            
+     
+            
 mostrar_menu()
