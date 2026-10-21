@@ -5,6 +5,7 @@ productos = []
 def agregar_producto():
     """ Realiza el alta de productos """
     print("alta de productos")
+    input()
     return
 
 def consultar_productos():
