@@ -9,21 +9,30 @@ def agregar_producto():
         precio = input("Ingrese precio de producto:\t")
 
         if nombre == "":
+            #Error: El nombre del producto no puede estar vacío
+
             print("Nombre de producto no puede estar vacío")
-            continue
+            input()
         elif precio == "":
+            #Error: El precio del producto no puede estar vacío
+
             print("Precio de producto no puede estar vacío")
-            continue
+            input()
         else:
             try:
+                #Valido precio numérico
                 precio_num = float(precio)
+
+                # Acá agrego producto ya que cumple todos los requisitos
+                productos.append([nombre, precio_num])
+
+                print(f"Producto agregado: {nombre} - {precio_num}")
+                
             except ValueError:
+                #Error: El precio del producto debe ser un número
+
                 print("Precio de producto debe ser un número")
-                continue
-
-        productos.append([nombre, precio_num])
-
-        print(f"Producto agregado: {nombre} - {precio_num}")
+                input()
 
         opcion=input("Desea agregar otro producto? (s/n): ")
 
@@ -34,7 +43,12 @@ def agregar_producto():
 
 def consultar_productos():
     """ Realiza la consulta de productos """
-    print("consulta de productos")
+
+    print("Listado de productos:")
+    print(f"-"*25)
+    print(f"    Nombre\t\t\tPrecio")
+    for producto in productos:
+        print(f"{producto[0]}\t\t\t{producto[1]}")
 
     return
 
