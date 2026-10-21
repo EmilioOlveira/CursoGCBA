@@ -45,12 +45,12 @@ def consultar_productos():
     """ Realiza la consulta de productos """
 
     print("Listado de productos:")
-    print(f"-"*25)
+    print(f"-"*50)
     print(f"    Nombre\t\t\tPrecio")
     for producto in productos:
-        print(f"{producto[0]}\t\t\t{producto[1]}")
+        print(f"{producto[0]:<30}\t\t\t{producto[1]:>12.2f}")
     input("Presione Enter para continuar...")
-    
+
     return
 
 def eliminar_producto():
