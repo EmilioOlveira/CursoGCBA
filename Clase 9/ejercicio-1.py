@@ -4,8 +4,32 @@ productos = []
 
 def agregar_producto():
     """ Realiza el alta de productos """
-    print("alta de productos")
-    input()
+    while True:
+        Nombre = input("Ingrese nombre de producto:/t")
+        Precio = input("Ingrese precio de producto:/t")
+
+        if nombre == "":
+            print("Nombre de producto no puede estar vacío")
+            continue
+        elif precio == "":
+            print("Precio de producto no puede estar vacío")
+            continue
+        else:
+            try:
+                precio_num = float(precio)
+            except ValueError:
+                print("Precio de producto debe ser un número")
+                continue
+
+        productos.append({"nombre": nombre, "precio": precio_num})
+
+        print(f"Producto agregado: {nombre} - {precio_num}")
+
+        input("Desea agregar otro producto? (s/n): ")
+
+        if input().lower() != "s":
+            break
+    
     return
 
 def consultar_productos():
