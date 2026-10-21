@@ -49,7 +49,8 @@ def consultar_productos():
     print(f"    Nombre\t\t\tPrecio")
     for producto in productos:
         print(f"{producto[0]}\t\t\t{producto[1]}")
-
+    input("Presione Enter para continuar...")
+    
     return
 
 def eliminar_producto():
