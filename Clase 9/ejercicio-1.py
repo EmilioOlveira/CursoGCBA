@@ -25,9 +25,9 @@ def agregar_producto():
 
         print(f"Producto agregado: {nombre} - {precio_num}")
 
-        input("Desea agregar otro producto? (s/n): ")
+        opcion=input("Desea agregar otro producto? (s/n): ")
 
-        if input().lower() != "s":
+        if opcion.lower() != "s":
             break
     
     return
