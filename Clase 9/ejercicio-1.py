@@ -38,7 +38,6 @@ def agregar_producto():
 
         if opcion.lower() != "s":
             break
-    
     return
 
 def consultar_productos():
