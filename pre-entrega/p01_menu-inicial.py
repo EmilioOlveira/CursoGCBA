@@ -26,6 +26,9 @@ from p06_eliminar_indice import Eliminar_Indice
 #Importo librería OS para usar el clear screen
 import os
 
+#Importo librería json para usar archivos .json
+import json
+
 #Importo libreria keyboard para validar ENTER / ESC
 
 #####################################################
@@ -53,10 +56,29 @@ def despliegamenu():
     print("\n")
     return
 
-# Inicializo productos para prueba (linea a asterisquear)
-# productos=[["pera","fruta",10],["Manzana","fruta",20],["apio","verdura",30]]
+def lee_productos():
+    #El Try es por si no existe el archivo.
+
+    try:
+        with open("productos.json","r",encoding='utf-8') as archivo:
+            productos=archivo.load("productos.json")
+    except ValueError:
+         return
+    
+    return
+
+def graba_productos():
+
+    with ("productos.txt", "w") as archivo:
+        archivo.dump(productos)
+
+    return
+
+# Inicializo productos con lo que figura en el .json o en blanco
+lee_productos()
 
 #Bucle eterno (hasta el break x opción salida)
+
 while True:
     #Limpio pantalla para que siempre el menú aparezca igual y en la misma posición
     limpiar_pantalla()
@@ -97,6 +119,9 @@ while True:
 
     print("\n")
     input("Presione ENTER para continuar...") 
+
+#Dumpea productos al .json para su uso posterior
+graba_productos()    
 
 
 
