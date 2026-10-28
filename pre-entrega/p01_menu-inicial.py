@@ -77,7 +77,10 @@ def lee_productos():
 
 def graba_productos():
 
-    with open("productos.json","w",encoding='utf-8') as archivo:
+    carpeta_actual = os.path.dirname(os.path.abspath(__file__))
+    ruta_json = os.path.join(carpeta_actual, "productos.json")
+
+    with open(ruta_json,"w",encoding='utf-8') as archivo:
         json.dump(productos, archivo)
 
     return
