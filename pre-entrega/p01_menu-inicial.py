@@ -63,26 +63,22 @@ def lee_productos():
     try:
         with open("./productos.json","r",encoding='utf-8') as archivo:
             productos=json.load(archivo)
-            print(f"Se cargaron {len(productos)} productos desde productos.json")
-            print(productos)
     except (FileNotFoundError, json.JSONDecodeError):
             print("No se encontró el archivo productos.json o está vacío. Se creará uno nuevo.")
             productos=[]
-            return    
+            return(productos)  
     
-    return
+    return(productos)
 
-def graba_productos():
+def graba_productos(productos):
 
     with open("./productos.json","w",encoding='utf-8') as archivo:
         json.dump(productos, archivo)
-
     return
 
 # Inicializo productos con lo que figura en el .json o en blanco
-lee_productos()
-print(productos)
-input("Continuar")
+productos=lee_productos()
+
 #Bucle eterno (hasta el break x opción salida)
 
 while True:
@@ -127,7 +123,7 @@ while True:
     input("Presione ENTER para continuar...") 
 
 #Dumpea productos al .json para su uso posterior
-graba_productos()    
+graba_productos(productos)    
 
 
 
