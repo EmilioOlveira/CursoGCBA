@@ -57,10 +57,15 @@ def despliegamenu():
     return
 
 def lee_productos():
+
+    # Aseguramos la ruta correcta dentro de /pre-entrega/
+    carpeta_actual = os.path.dirname(os.path.abspath(__file__))
+    ruta_json = os.path.join(carpeta_actual, "productos.json")
+
     #El Try es por si no existe el archivo.
 
     try:
-        with open("productos.json","r",encoding='utf-8') as archivo:
+        with open(ruta_json,"r",encoding='utf-8') as archivo:
             productos=json.load("productos.json")
     except (FileNotFoundError, json.JSONDecodeError):
             productos=[]
