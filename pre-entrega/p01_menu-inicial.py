@@ -61,9 +61,10 @@ def lee_productos():
 
     try:
         with open("productos.json","r",encoding='utf-8') as archivo:
-            productos=archivo.load("productos.json")
-    except ValueError:
-         return
+            productos=json.load("productos.json")
+    except (FileNotFoundError, json.JSONDecodeError):
+            productos=[]
+            return productos    
     
     return
 
