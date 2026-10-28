@@ -62,7 +62,7 @@ def lee_productos():
 
     try:
         with open("./productos.json","r",encoding='utf-8') as archivo:
-            productos=json.load("productos.json")
+            productos=json.load(archivo)
             print(f"Se cargaron {len(productos)} productos desde productos.json")
     except (FileNotFoundError, json.JSONDecodeError):
             print("No se encontró el archivo productos.json o está vacío. Se creará uno nuevo.")
