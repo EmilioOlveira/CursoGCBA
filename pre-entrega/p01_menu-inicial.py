@@ -69,7 +69,7 @@ def lee_productos():
 
 def graba_productos():
 
-    with ("productos.txt", "w") as archivo:
+    with open("productos.json","w",encoding='utf-8') as archivo:
         archivo.dump(productos)
 
     return
