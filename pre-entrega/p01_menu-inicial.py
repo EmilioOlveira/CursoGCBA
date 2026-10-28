@@ -71,7 +71,7 @@ def lee_productos():
 def graba_productos():
 
     with open("productos.json","w",encoding='utf-8') as archivo:
-        archivo.dump(productos)
+        json.dump(productos, archivo)
 
     return
 
