@@ -85,6 +85,7 @@ def graba_productos():
 # Inicializo productos con lo que figura en el .json o en blanco
 lee_productos()
 print(productos)
+input("Continuar")
 #Bucle eterno (hasta el break x opción salida)
 
 while True:
