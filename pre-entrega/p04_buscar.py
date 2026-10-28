@@ -24,7 +24,7 @@ def Buscar(productos):
     print("-"*50)
 
     Busqueda = input("Ingrese el nombre a buscar ... ")
-
+    imprimi = False
     #Busco en tabla
     for i in productos:
 
@@ -36,10 +36,10 @@ def Buscar(productos):
             print(f"Categoría: {i[1]}")
             print(f"Precio:    {i[2]}")
     
-            Imprimi=True
+            imprimi=True
             break
 
-    if Imprimi==False:
+    if imprimi==False:
         #Si no existe, informo de dicha situación
         print(f"\n")
         print("Producto no encontrado")
