@@ -31,3 +31,11 @@ def division(numero1,numero2):
     except ZeroDivisionError:
         print("Error: No se puede dividir por cero.")
         return 0
+
+def ingresa_numero(orden):
+    while True:
+        try:
+            numero = float(input(f"Ingrese el {orden} número: "))
+            return numero
+        except ValueError:
+            print("Error: Debe ingresar un número válido.")

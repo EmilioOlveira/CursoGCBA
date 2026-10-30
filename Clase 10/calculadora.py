@@ -13,8 +13,10 @@ def menu():
     print("5. Salir")
 
     opcion=input("Seleccione una opción: ")
-    a=float(input("Ingrese el primer número: "))
-    b=float(input("Ingrese el segundo número: "))
+
+    #Ingreso los operandos asegurandome que sean numéricos
+    a=ingresa_numero("primer")
+    b=ingresa_numero("segundo")
 
 
     match opcion.strip():
@@ -33,7 +35,7 @@ def menu():
         case "4":
             resultado = division(a, b)
             print(f"El resultado de la división es: {resultado}")
-            input("Presione E1NTER para continuar...")
+            input("Presione ENTER para continuar...")
         case "5":
             print("Saliendo del programa...")
             return False
