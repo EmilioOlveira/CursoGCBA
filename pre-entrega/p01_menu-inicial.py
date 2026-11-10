@@ -37,7 +37,6 @@ import keyboard
 
 # define la tabla de productos
 columnas = 3
-productos = carga_inicial_productos()
 
 def despliegamenu():
     print("="*30)

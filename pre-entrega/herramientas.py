@@ -18,7 +18,7 @@ def carga_inicial_productos():
     #El Try es por si no existe el archivo.
 
     try:
-        with open("./files/productos.txt","r",encoding='utf-8') as archivo:
+        with open("./pre-entregafiles/productos.txt","r",encoding='utf-8') as archivo:
             productos=[linea.strip for linea in archivo.readlines]
     except (FileNotFoundError):
             print("No se encontró el archivo productos.json o está vacío. Se creará uno nuevo.")
@@ -29,7 +29,7 @@ def carga_inicial_productos():
 
 def graba_productos(productos):
 
-    with open("./files/productos.txt","w",encoding='utf-8') as archivo:
+    with open("./pre-entrega/files/productos.txt","w",encoding='utf-8') as archivo:
         for producto in productos:
             archivo.write(producto + "\n")  
     return
