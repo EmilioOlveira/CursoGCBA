@@ -23,12 +23,13 @@ def carga_inicial_productos():
     cursor = conexion.cursor()
 
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS t_productos 
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            nombre TEXT UNIQUE NOT NULL,
-            categoria TEXT NOT NULL,
-            precio INTEGER NOT NULL
-        """)
+    CREATE TABLE IF NOT EXISTS t_productos (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nombre TEXT NOT NULL,
+        categoria TEXT,
+        precio INTEGER NOT NULL CHECK (precio > 0)
+        )
+    """)
 
     cursor.execute("SELECT nombre, categoria, precio FROM t_productos")
 
