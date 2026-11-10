@@ -53,16 +53,8 @@ def despliegamenu():
     print("\n")
     return
 
-
-
-def graba_productos(productos):
-
-    with open("./productos.json","w",encoding='utf-8') as archivo:
-        json.dump(productos, archivo)
-    return
-
-# Inicializo productos con lo que figura en el .json o en blanco
-productos=lee_productos()
+# Inicializo productos con lo que figura en el .txt o en blanco
+productos=carga_inicial_productos()
 
 #Bucle eterno (hasta el break x opción salida)
 

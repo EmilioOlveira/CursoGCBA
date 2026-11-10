@@ -27,4 +27,10 @@ def carga_inicial_productos():
 
     return(productos)
 
+def graba_productos(productos):
+
+    with open("./files/productos.txt","w",encoding='utf-8') as archivo:
+        for producto in productos:
+            archivo.write(producto + "\n")  
+    return
 
