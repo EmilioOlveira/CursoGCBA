@@ -17,9 +17,7 @@ def Mostrar(productos):
     print("="*70)
 
     contador = 0
-    print(productos)
-    input("Pulse ENTER para continuar ...")
-    
+
     for indice,i in enumerate(productos):
         art_nombre=i[0]
         art_cat=i[1]

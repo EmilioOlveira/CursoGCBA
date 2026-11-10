@@ -46,8 +46,8 @@ def Alta(productos):
         #Limpio pantalla del menú/carga anterior
         limpiar_pantalla()
      
-        art_nombre= input("\033[1mIngrese nombre:\033[0m")
-        art_cat=    input("\033[1mIngrese categoría:\033[0m")
+        art_nombre= input("\033[1mIngrese nombre:\033[0m").title()
+        art_cat=    input("\033[1mIngrese categoría:\033[0m").title()
         art_precio= input("\033[1mIngrese precio: \033[0m")
 
         ok=valida_precio(art_precio)

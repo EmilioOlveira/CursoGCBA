@@ -1,2 +1,4 @@
 Manzana,Frutas,2200
 Kiwi,Frutas,3300
+lechuga,verduras,500
+Espinaca,Verduras,900
