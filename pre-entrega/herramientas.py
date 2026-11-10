@@ -4,6 +4,11 @@ import os
 #Importo libreria keyboard para validar ENTER / ESC
 import keyboard
 
+#Importo sqlite3 para manejo de la bbdd
+import sqlite3
+
+
+
  #Limpio pantalla supongo que si no es windows ("nt") es mac/linux ("posix")
 def limpiar_pantalla():
    
@@ -14,15 +19,20 @@ def limpiar_pantalla():
     return
 
 def carga_inicial_productos():
+    conexion = sqlite3.connect("./pre-entrega/files/productos.db")
+    cursor = conexion.cursor()
 
-    #El Try es por si no existe el archivo.
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS t_productos 
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nombre TEXT UNIQUE NOT NULL,
+            categoria TEXT NOT NULL,
+            precio INTEGER NOT NULL
+        """)
 
-    try:
-        with open("./pre-entrega/files/productos.txt","r",encoding='utf-8') as archivo:
-            productos=[linea.strip().split(',') for linea in archivo.readlines()]
-    except (FileNotFoundError):
-            productos=[]
+    cursor.execute("SELECT nombre, categoria, precio FROM t_productos")
 
+    productos = cursor.fetchall()
     return(productos)
 
 def graba_productos(productos):
