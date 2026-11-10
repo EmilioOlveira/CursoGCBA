@@ -4,6 +4,9 @@ import os
 #Importo libreria keyboard para validar ENTER / ESC
 import keyboard
 
+#Importo libreria json para manejo de archivos .json
+import json
+
  #Limpio pantalla supongo que si no es windows ("nt") es mac/linux ("posix")
 def limpiar_pantalla():
    
