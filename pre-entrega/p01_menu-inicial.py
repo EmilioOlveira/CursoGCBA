@@ -99,8 +99,7 @@ while True:
     print("\n")
     input("Presione ENTER para continuar...") 
 
-#Dumpea productos al .txt para su uso posterior
-graba_productos(productos)    
+
 
 
 

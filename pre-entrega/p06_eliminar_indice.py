@@ -50,6 +50,10 @@ def Eliminar_Indice(productos):
         #e informo que ha sido eliminado
         if Respuesta.lower()=="baja":
             borrado=productos.pop(Busqueda)
+
+            #Dumpea productos al .txt para su uso posterior
+            graba_productos(productos)    
+
             Elimine=True
             print(f"-"*50)
             print(f"El artículo {Busqueda} - {borrado[0]} ha sido ELIMINADO")
