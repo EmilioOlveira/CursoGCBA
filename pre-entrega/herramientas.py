@@ -25,7 +25,7 @@ def carga_inicial_productos():
             input("Presione ENTER para continuar...")
             productos=[]
 
-    print(productos())
+    print(productos)
     return(productos)
 
 def graba_productos(productos):
