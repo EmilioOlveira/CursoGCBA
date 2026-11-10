@@ -31,6 +31,8 @@ def graba_productos(productos):
 
     with open("./pre-entrega/files/productos.txt","w",encoding='utf-8') as archivo:
         for producto in productos:
-            archivo.write(producto + "\n")  
+
+            linea = ",".join(str(dato) for dato in producto)
+            archivo.write(linea + "\n")  
     return
 
