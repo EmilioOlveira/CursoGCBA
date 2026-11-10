@@ -99,7 +99,7 @@ while True:
     print("\n")
     input("Presione ENTER para continuar...") 
 
-#Dumpea productos al .json para su uso posterior
+#Dumpea productos al .txt para su uso posterior
 graba_productos(productos)    
 
 
