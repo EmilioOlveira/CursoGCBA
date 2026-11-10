@@ -22,8 +22,6 @@ def carga_inicial_productos():
             productos=[linea.strip().split(',') for linea in archivo.readlines()]
     except (FileNotFoundError):
             productos=[]
-    print(productos)
-    input("Presione ENTER para continuar...")
 
     return(productos)
 
