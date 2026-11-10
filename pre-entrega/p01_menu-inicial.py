@@ -5,6 +5,7 @@
 #que tiene funciones generales que quiero usar
 #Uso el import *, porque son funciones generales. 
 
+
 from herramientas import *
 
 #Importo todas las funciones donde ejecutaré cada opción del menú 
