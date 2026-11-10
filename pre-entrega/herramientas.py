@@ -24,8 +24,9 @@ def carga_inicial_productos():
             print("No se encontró el archivo productos.json o está vacío. Se creará uno nuevo.")
             input("Presione ENTER para continuar...")
             productos=[]
-
     print(productos)
+    input("Presione ENTER para continuar...")
+
     return(productos)
 
 def graba_productos(productos):
