@@ -26,9 +26,6 @@ from p06_eliminar_indice import Eliminar_Indice
 #Importo librería OS para usar el clear screen
 import os
 
-#Importo librería json para usar archivos .json
-import json
-
 #Importo libreria keyboard para validar ENTER / ESC
 
 #####################################################
@@ -40,7 +37,7 @@ import keyboard
 
 # define la tabla de productos
 columnas = 3
-productos = []
+productos = carga-inicial-productos()
 
 def despliegamenu():
     print("="*30)
@@ -56,19 +53,7 @@ def despliegamenu():
     print("\n")
     return
 
-def lee_productos():
 
-    #El Try es por si no existe el archivo.
-
-    try:
-        with open("./productos.json","r",encoding='utf-8') as archivo:
-            productos=json.load(archivo)
-    except (FileNotFoundError, json.JSONDecodeError):
-            print("No se encontró el archivo productos.json o está vacío. Se creará uno nuevo.")
-            productos=[]
-            return(productos)  
-    
-    return(productos)
 
 def graba_productos(productos):
 

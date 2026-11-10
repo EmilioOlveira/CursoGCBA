@@ -13,3 +13,19 @@ def limpiar_pantalla():
     else:
         os.system('clear')
     return
+
+def carga_inicial_productos():
+
+    #El Try es por si no existe el archivo.
+
+    try:
+        with open("./files/productos.txt","r",encoding='utf-8') as archivo:
+            productos=[linea.strip for linea in archivo.readlines]
+    except (FileNotFoundError):
+            print("No se encontró el archivo productos.json o está vacío. Se creará uno nuevo.")
+            input("Presione ENTER para continuar...")
+            productos=[]
+
+    return(productos)
+
+
