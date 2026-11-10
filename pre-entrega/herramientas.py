@@ -19,7 +19,7 @@ def carga_inicial_productos():
 
     try:
         with open("./pre-entrega/files/productos.txt","r",encoding='utf-8') as archivo:
-            productos=[linea.strip for linea in archivo.readlines]
+            productos=[linea.strip() for linea in archivo.readlines]
     except (FileNotFoundError):
             print("No se encontró el archivo productos.json o está vacío. Se creará uno nuevo.")
             input("Presione ENTER para continuar...")
