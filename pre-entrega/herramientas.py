@@ -81,17 +81,13 @@ def borra_productos(mi_nombre):
     (buscar,),
     )
 
-    if cursor.rowcount > 0:
-        print("Producto eliminado con éxito.")
-    else:
-        print(buscar)
-        print("No se encontró ningún producto con ese nombre.")
-
-    input("Presione cualquier tecla para continuar ...")
+    respuesta=cursor.rowcount   # Devuelve 1 si se eliminó correctamente, 0 si hubo un error
 
     #Hago commit para que se guarden los cambios y cierro la conexión
     conexion.commit()
     conexion.close()
+
+    return respuesta
 
 
 

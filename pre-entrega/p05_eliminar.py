@@ -45,20 +45,16 @@ def Eliminar(productos):
             #e informo que ha sido eliminado
 
             if Respuesta.lower()=="baja":
-                borrado=productos.pop(indice)
-
-                #Borro también en la BBDD
                 
-                borra_productos(busqueda.lower())
+                #Borro en la BBDD
+                respuesta=borra_productos(busqueda.lower())
 
-                Elimine=True
-                print(f"-"*50)
-                print(f"El artículo {indice} - {borrado[0]} ha sido ELIMINADO")
-    
-    if Elimine==False:
-        #Si no existe, informo de dicha situación
-        print(f"\n")
-        print("Producto no encontrado")
+                if respuesta==1:
+                    print(f"-"*50)
+                    print(f"El artículo {indice} - {borrado[0]} ha sido ELIMINADO")
+                else:
+                    print(f"-"*50)
+                    print(f"Hubo algún problema, el artículo {indice} - {borrado[0]} NO FUE BORRADO")
 
     # Cierro la pantalla estéticamente
     print("-"*50)
@@ -66,4 +62,4 @@ def Eliminar(productos):
     # input("Presione cualquier tecla para continuar ...")
 
     #Devuelvo la nueva tabla
-    return(productos)
+    return
