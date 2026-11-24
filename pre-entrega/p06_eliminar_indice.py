@@ -13,7 +13,7 @@ import os
 #Y acá también la función Mostrar desde p03_mostrar.py
 
 from herramientas import *
-from p03_mostrar.py import *
+from p03_mostrar import Mostrar
 
 Imprimi=False
 
