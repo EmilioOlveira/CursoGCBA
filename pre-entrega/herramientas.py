@@ -81,6 +81,7 @@ def borra_productos(mi_nombre):
     if cursor.rowcount > 0:
         print("Producto eliminado con éxito.")
     else:
+        print(buscar)
         print("No se encontró ningún producto con ese nombre.")
 
     input("Presione cualquier tecla para continuar ...")
