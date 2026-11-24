@@ -47,8 +47,9 @@ def Eliminar(productos):
             if Respuesta.lower()=="baja":
                 borrado=productos.pop(indice)
 
-                #Dumpea productos al .txt para su uso posterior
-                graba_productos(productos)    
+                #Borro también en la BBDD
+                
+                borrar_productos(busqueda.lower())
 
                 Elimine=True
                 print(f"-"*50)

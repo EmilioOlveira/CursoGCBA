@@ -36,12 +36,45 @@ def carga_inicial_productos():
     productos = cursor.fetchall()
     return(productos)
 
-def graba_productos(productos):
+def graba_productos(mi_nombre, mi_categoria, mi_precio):
 
-    with open("./pre-entrega/files/productos.txt","w",encoding='utf-8') as archivo:
-        for producto in productos:
+    #Establezco conexión con la BBDD
+    conexion = sqlite3.connect("./pre-entrega/files/productos.db")
 
-            linea = ",".join(str(dato) for dato in producto)
-            archivo.write(linea + "\n")  
+    #Ejecuto mi instrucción para AGREGAR registro
+
+    conexion.execute(
+        """ INSERT INTO t_productos (nombre, categoria, precio) 
+                VALUES (?,?,?)"""  
+                (mi_nombre, mi_categoria, mi_precio)
+                
+    )
+
+    #Hago commit para que se guarden los cambios y cierro la conexión
+    conexion.commit()
+    conexion.close()
+
     return
+
+def borra_productos(mi_nombre):
+
+    #Este lower es redundante, pero por las dudas es mejor incluirlo
+
+    buscar = mi_nombre.lower()
+
+    #Establezco conexión con la BBDD
+    conexion = sqlite3.connect("./pre-entrega/files/productos.db")
+    # Ejcuto el delete limitando al primer registro coincidente, 
+    # No debería haber mas de uno, pero por las dudas lo limito a 1
+
+    conexion.execute(
+        """ DELETE FROM t_productos WHERE nombre = ? """ LIMIT 1
+        (buscar,)
+    )
+
+    #Hago commit para que se guarden los cambios y cierro la conexión
+    conexion.commit()
+    conexion.close()
+
+
 

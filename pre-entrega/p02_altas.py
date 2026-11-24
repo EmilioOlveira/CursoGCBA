@@ -56,8 +56,8 @@ def Alta(productos):
         if ok>0:
             productos.append([art_nombre,art_cat,int(art_precio)])
 
-            #Dumpea productos al .txt para su uso posterior
-            graba_productos(productos)    
+            # Al mismo tiempo doy el alta en la base de datos
+            graba_productos(art_nombre, art_cat, int(art_precio))
 
             print(f"\033[1mProducto {art_nombre} cargado OK.\033[0m")
                    

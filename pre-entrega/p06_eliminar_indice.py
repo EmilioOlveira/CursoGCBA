@@ -14,10 +14,21 @@ from herramientas import *
 
 Imprimi=False
 
+#OJO!!! Esta rutina, en la versión bbdd elimina por el índice en la TABLA,
+#no por el índice autoincremental de la bbdd. 
+#Por eso agregué el Mostrar(productos) al principio de la rutina.
+
 def Eliminar_Indice(productos):
 
     #Limpio pantalla
     limpiar_pantalla()
+    
+    #Hago un listado de los productos para que el usuario pueda 
+    #ver los índices de cada uno. Muestro de a 20 lineas, si en algún momento
+    #quiere interrumpir con la letra N, puede hacerlo y ahí le va a pedir el 
+    #
+
+    Mostrar(productos,20)
 
     #Inicializo Elimine para que no me de error si no elimino nada
     Elimine=False
@@ -51,8 +62,10 @@ def Eliminar_Indice(productos):
         if Respuesta.lower()=="baja":
             borrado=productos.pop(Busqueda)
 
-            #Dumpea productos al .txt para su uso posterior
-            graba_productos(productos)    
+            #Borra Producto de la bbdd, como ya tengo hecha la rutina para 
+            #hacerlo por nombre, uso dicho campo en lugar de armar otra def
+
+            borra_productos(productos[Busqueda][0].lower())    
 
             Elimine=True
             print(f"-"*50)

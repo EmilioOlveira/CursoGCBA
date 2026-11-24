@@ -5,12 +5,16 @@
 #Importo librerias, desgraciadamente python no les dá visibilidad hacia abajo
 # 
 # #Importo librería OS para usar el clear screen
+
+#Modificación: Se agregó la opción de mostrar N lineas por pantalla, 
+#en lugar de 10 fijas, N es el parámetro optativo de la función
+# por defecto vale 10   
 import os
 
 #Importo mi archivo de utilidades
 from herramientas import *
 
-def Mostrar(productos):
+def Mostrar(productos,lineas=10):
     #Imprimo títulos
     print("="*70)
     print(f"INDICE  PRODUCTO            CATEGORIA               PRECIO")
@@ -26,8 +30,8 @@ def Mostrar(productos):
 
         print(f"{indice:<8}{art_nombre:<20}{art_cat:<20}{art_precio:>8}")
 
-        if contador%10==0:
-            #Cada 10 lineas, paro y pregunto si desea continuar
+        if contador%lineas==0:
+            #Cada "lineas", paro y pregunto si desea continuar
             print("="*70)
             respuesta=input("Presione N para volver al Menu Principal, cualquier otra tecla para continuar ")
 
