@@ -49,7 +49,7 @@ def Eliminar(productos):
 
                 #Borro también en la BBDD
                 
-                borrar_productos(busqueda.lower())
+                borra_productos(busqueda.lower())
 
                 Elimine=True
                 print(f"-"*50)
