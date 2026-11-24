@@ -68,7 +68,7 @@ def borra_productos(mi_nombre):
     # No debería haber mas de uno, pero por las dudas lo limito a 1
 
     conexion.execute(
-        """ DELETE FROM t_productos WHERE nombre = ? """ LIMIT 1
+        """ DELETE FROM t_productos WHERE nombre = ? LIMIT 1 """ 
         (buscar,)
     )
 
