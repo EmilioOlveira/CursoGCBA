@@ -64,6 +64,8 @@ def borra_productos(mi_nombre):
 
     #Establezco conexión con la BBDD
     conexion = sqlite3.connect("./pre-entrega/files/productos.db")
+    cursor = conexion.cursor()
+
     # Ejcuto el delete limitando al primer registro coincidente, 
     # No debería haber mas de uno, pero por las dudas lo limito a 1
 
@@ -75,7 +77,7 @@ def borra_productos(mi_nombre):
     (buscar,),
     )
 
-    if conexion.rowcount > 0:
+    if cursor.rowcount > 0:
         print("Producto eliminado con éxito.")
     else:
         print("No se encontró ningún producto con ese nombre.")
