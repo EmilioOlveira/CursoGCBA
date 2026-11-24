@@ -40,8 +40,9 @@ def valida_precio(precio):
         return -1               #Devuelve error -3 - Precio no es entero
 
 
-def Alta(productos):
-
+#def Alta(productos):
+def Alta():
+    
     while True:
         #Limpio pantalla del menú/carga anterior
         limpiar_pantalla()
@@ -54,12 +55,13 @@ def Alta(productos):
 
         print(f"\n")    #linea en blanco
         if ok>0:
-            productos.append([art_nombre,art_cat,int(art_precio)])
+#            productos.append([art_nombre,art_cat,int(art_precio)])
 
             # Al mismo tiempo doy el alta en la base de datos
-            graba_productos(art_nombre, art_cat, int(art_precio))
-
-            print(f"\033[1mProducto {art_nombre} cargado OK.\033[0m")
+            if graba_productos(art_nombre, art_cat, int(art_precio)) == 1:
+                print(f"\033[1mProducto {art_nombre} cargado OK.\033[0m")
+            else:
+                print(f"Hubo algún error al dar el alta de {art_nombre}\n")
                    
         else:
             print(f"{Errores_precio[ok]}\n")
@@ -71,4 +73,4 @@ def Alta(productos):
         if respuesta == "N" or respuesta=="n":     
             break
 
-    return(productos) 
+    return() 

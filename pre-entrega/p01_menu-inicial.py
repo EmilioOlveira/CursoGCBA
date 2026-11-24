@@ -78,7 +78,8 @@ while True:
     # Llama a las distintas opciones del menú según la elección del usuario
     match Opcion:
         case 1:
-            productos=Alta(productos)
+            Alta()
+            carga_inicial_productos()  # Actualiza la lista de productos después de dar de alta uno nuevo
         case 2:
             Mostrar(productos)
         case 3:
