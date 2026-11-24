@@ -10,7 +10,10 @@
 import os
 
 #Importo mi archivo de utilidades
+#Y acá también la función Mostrar desde p03_mostrar.py
+
 from herramientas import *
+from p03_mostrar.py import *
 
 Imprimi=False
 
