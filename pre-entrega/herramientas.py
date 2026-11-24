@@ -68,9 +68,12 @@ def borra_productos(mi_nombre):
     # No debería haber mas de uno, pero por las dudas lo limito a 1
 
     conexion.execute(
-        """ DELETE FROM t_productos WHERE nombre = ? LIMIT 1 """,  
-        (buscar,)
-    )
+    """ DELETE FROM t_productos 
+        WHERE id = (
+            SELECT id FROM t_productos WHERE nombre = ? LIMIT 1
+        ) """,
+    (buscar,),
+)
 
     #Hago commit para que se guarden los cambios y cierro la conexión
     conexion.commit()
