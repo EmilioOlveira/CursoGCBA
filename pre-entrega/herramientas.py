@@ -45,7 +45,7 @@ def graba_productos(mi_nombre, mi_categoria, mi_precio):
 
     conexion.execute(
         """ INSERT INTO t_productos (nombre, categoria, precio) 
-                VALUES (?,?,?)"""  
+                VALUES (?,?,?)"""  ,
                 (mi_nombre, mi_categoria, mi_precio)
                 
     )
