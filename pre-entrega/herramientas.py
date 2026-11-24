@@ -36,29 +36,29 @@ def carga_inicial_productos():
     productos = cursor.fetchall()
     return(productos)
 
-def graba_productos(mi_nombre, mi_categoria, mi_precio):
+    def graba_productos(mi_nombre, mi_categoria, mi_precio):
 
-    respuesta=0
-    
-    #Establezco conexión con la BBDD
-    conexion = sqlite3.connect("./pre-entrega/files/productos.db")
-    cursor = conexion.cursor()
-    
-    #Ejecuto mi instrucción para AGREGAR registro
+        respuesta=0
+        
+        #Establezco conexión con la BBDD
+        conexion = sqlite3.connect("./pre-entrega/files/productos.db")
+        cursor = conexion.cursor()
+        
+        #Ejecuto mi instrucción para AGREGAR registro
 
-    conexion.execute(
-        """ INSERT INTO t_productos (nombre, categoria, precio) 
-                VALUES (?,?,?)"""  ,
-                (mi_nombre, mi_categoria, mi_precio)
-                
-    )
-    respuesta=cursor.rowcount   # Devuelve 1 si se insertó correctamente, 0 si hubo un error
+        conexion.execute(
+            """ INSERT INTO t_productos (nombre, categoria, precio) 
+                    VALUES (?,?,?)"""  ,
+                    (mi_nombre, mi_categoria, mi_precio)
+                    
+        )
+        respuesta=cursor.rowcount   # Devuelve 1 si se insertó correctamente, 0 si hubo un error
 
-    #Hago commit para que se guarden los cambios y cierro la conexión
-    conexion.commit()
-    conexion.close()
+        #Hago commit para que se guarden los cambios y cierro la conexión
+        conexion.commit()
+        conexion.close()
 
-    return respuesta
+        return respuesta
 
 def borra_productos(mi_nombre):
 
@@ -73,7 +73,7 @@ def borra_productos(mi_nombre):
     # Ejcuto el delete limitando al primer registro coincidente, 
     # No debería haber mas de uno, pero por las dudas lo limito a 1
 
-    conexion.execute(
+    cursor.execute(
     """ DELETE FROM t_productos 
         WHERE id = (
             SELECT id FROM t_productos WHERE nombre = ? LIMIT 1
