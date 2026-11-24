@@ -51,10 +51,10 @@ def Eliminar(productos):
 
                 if respuesta==1:
                     print(f"-"*50)
-                    print(f"El artículo {indice} - {borrado[0]} ha sido ELIMINADO")
+                    print(f"El artículo {indice} - {busqueda.title()} ha sido ELIMINADO")
                 else:
                     print(f"-"*50)
-                    print(f"Hubo algún problema, el artículo {indice} - {borrado[0]} NO FUE BORRADO")
+                    print(f"Hubo algún problema, el artículo {indice} - {busqueda.title()} NO FUE BORRADO")
 
     # Cierro la pantalla estéticamente
     print("-"*50)
