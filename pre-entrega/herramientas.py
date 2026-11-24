@@ -73,7 +73,14 @@ def borra_productos(mi_nombre):
             SELECT id FROM t_productos WHERE nombre = ? LIMIT 1
         ) """,
     (buscar,),
-)
+    )
+
+    if cursor.rowcount > 0:
+        print("Producto eliminado con éxito.")
+    else:
+        print("No se encontró ningún producto con ese nombre.")
+
+    input("Presione cualquier tecla para continuar ...")
 
     #Hago commit para que se guarden los cambios y cierro la conexión
     conexion.commit()
