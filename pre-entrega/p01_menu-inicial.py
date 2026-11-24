@@ -53,12 +53,16 @@ def despliegamenu():
     print("\n")
     return
 
-# Inicializo productos con lo que figura en el .txt o en blanco
-productos=carga_inicial_productos()
-
 #Bucle eterno (hasta el break x opción salida)
 
 while True:
+    # Inicializo tabla productos con contenido de la tabla sql
+    # o, de ser necesario, la creo
+    # Lo hago en cada iteración para que siemre esté actualizada con las ´
+    # modificaciones que se hagan en cada opción del menú
+    
+    productos=carga_inicial_productos()
+
     #Limpio pantalla para que siempre el menú aparezca igual y en la misma posición
     limpiar_pantalla()
 
@@ -79,7 +83,6 @@ while True:
     match Opcion:
         case 1:
             Alta()
-            carga_inicial_productos()  # Actualiza la lista de productos después de dar de alta uno nuevo
         case 2:
             Mostrar(productos)
         case 3:
