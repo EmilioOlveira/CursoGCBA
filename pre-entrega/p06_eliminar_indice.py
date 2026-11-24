@@ -43,6 +43,7 @@ def Eliminar_Indice(productos):
 
     try:
         Busqueda=int(Busqueda)
+        
 
         if Busqueda>(len(productos)-1) or Busqueda<0:
             #No existe dicha posición, informo de dicha situación y me vuevo al menu ppal
@@ -63,7 +64,7 @@ def Eliminar_Indice(productos):
         #Elimino usando el método pop() que me devuelve la instancia de tabla borrada
         #e informo que ha sido eliminado
         if Respuesta.lower()=="baja":
-            borrado=productos.pop(Busqueda)
+#            borrado=productos.pop(Busqueda)
 
             #Borra Producto de la bbdd, como ya tengo hecha la rutina para 
             #hacerlo por nombre, uso dicho campo en lugar de armar otra def
@@ -72,7 +73,7 @@ def Eliminar_Indice(productos):
 
             Elimine=True
             print(f"-"*50)
-            print(f"El artículo {Busqueda} - {borrado[0]} ha sido ELIMINADO")
+            print(f"El artículo {Busqueda} - {productos[Busqueda][0]} ha sido ELIMINADO")
     
         # Cierro la pantalla estéticamente
         print("-"*50)
