@@ -46,16 +46,13 @@ def graba_productos(mi_nombre, mi_categoria, mi_precio):
     
     #Ejecuto mi instrucción para AGREGAR registro
 
-    conexion.execute(
+    cursor.execute(
         """ INSERT INTO t_productos (nombre, categoria, precio) 
                 VALUES (?,?,?)"""  ,
                 (mi_nombre, mi_categoria, mi_precio)
                 
     )
     respuesta=cursor.rowcount   # Devuelve 1 si se insertó correctamente, 0 si hubo un error
-
-    print(f"graba_productos: respuesta={respuesta}")
-    input("Presione cualquier tecla para continuar ...")
 
     #Hago commit para que se guarden los cambios y cierro la conexión
     conexion.commit()
