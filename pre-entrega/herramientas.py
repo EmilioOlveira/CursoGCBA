@@ -38,6 +38,8 @@ def carga_inicial_productos():
 
 def graba_productos(mi_nombre, mi_categoria, mi_precio):
 
+    respuesta=0
+    
     #Establezco conexión con la BBDD
     conexion = sqlite3.connect("./pre-entrega/files/productos.db")
     cursor = conexion.cursor()
@@ -50,12 +52,13 @@ def graba_productos(mi_nombre, mi_categoria, mi_precio):
                 (mi_nombre, mi_categoria, mi_precio)
                 
     )
+    respuesta=cursor.rowcount   # Devuelve 1 si se insertó correctamente, 0 si hubo un error
 
     #Hago commit para que se guarden los cambios y cierro la conexión
     conexion.commit()
     conexion.close()
 
-    return
+    return respuesta
 
 def borra_productos(mi_nombre):
 
