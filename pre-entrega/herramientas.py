@@ -40,7 +40,8 @@ def graba_productos(mi_nombre, mi_categoria, mi_precio):
 
     #Establezco conexión con la BBDD
     conexion = sqlite3.connect("./pre-entrega/files/productos.db")
-
+    cursor = conexion.cursor()
+    
     #Ejecuto mi instrucción para AGREGAR registro
 
     conexion.execute(
@@ -60,7 +61,7 @@ def borra_productos(mi_nombre):
 
     #Este lower es redundante, pero por las dudas es mejor incluirlo
 
-    buscar = mi_nombre.lower()
+    buscar = mi_nombre.title()
 
     #Establezco conexión con la BBDD
     conexion = sqlite3.connect("./pre-entrega/files/productos.db")
