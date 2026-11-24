@@ -25,12 +25,12 @@ def Eliminar(productos):
     #Solicito nomnbre de producto a eliminar
     print("-"*50)
 
-    Busqueda = input("Ingrese el nombre a buscar ... ")
+    busqueda = input("Ingrese el nombre a buscar ... ")
 
     #Busco en tabla, con enumerate para que me devuelva también en índice en cada iteración
     for indice, i in enumerate(productos):
 
-        if i[0].lower() == Busqueda.lower():
+        if i[0].lower() == busqueda.lower():
 
             #Imprimo artículo encontrado con formato tarjeta
             print(f"\n")
